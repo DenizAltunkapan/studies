@@ -1,0 +1,26 @@
+# IDE specific files
+*idea/
+*.iml
+*.metadata/
+*.log
+
+# Eclipse specific files
+*bin/
+*out/
+*.settings/
+
+# IntelliJ specific files
+*.class
+*.jar
+*.war
+
+# General files to ignore
+*.class
+*.jar
+*.war
+*.log
+*.tmp
+
+# OS generated files
+*.DS_Store
+*Thumbs.db
