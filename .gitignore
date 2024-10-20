@@ -24,3 +24,13 @@
 # OS generated files
 *.DS_Store
 *Thumbs.db
+
+# LaTeX
+*.aux
+*.log
+*.out
+*.gz
+*.toc
+
+#notebook
+**/.ipynb_checkpoints
