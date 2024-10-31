@@ -21,6 +21,12 @@
             <button v-on:click="counter++">increase</button>
             <button @click="counter--">decrease</button>
         </div>
+
+        <div>
+            <ul>
+                <li v-for="user in users">{{user.name}}</li>
+            </ul>
+        </div>
     </div>
 
     

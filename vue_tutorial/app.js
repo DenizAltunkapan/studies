@@ -3,7 +3,12 @@ const app = Vue.createApp({
         return {
             title: "Hello, Vue :D",
             counter:0,
-            visibility: false
+            visibility: false,
+            users: [
+                {name: 'Deniz', major: 'Software Engineering'},
+                {name: 'Maxi', major: 'Computer Science'},
+                {name: ''}
+            ]
         }
     },
     methods: {
