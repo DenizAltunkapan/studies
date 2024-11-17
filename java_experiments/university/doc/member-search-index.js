@@ -1,1 +1,0 @@
-memberSearchIndex = [{"p":"testprojekte","c":"ggtRechner","l":"ggT(int, int)","u":"ggT(int,int)"},{"p":"testprojekte","c":"ggtRechner","l":"ggtRechner()","u":"%3Cinit%3E()"},{"p":"testprojekte","c":"ggtRechner","l":"main(String[])","u":"main(java.lang.String[])"}];updateSearchResults();
