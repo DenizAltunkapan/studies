@@ -31,4 +31,16 @@ public class EdgeListGraph implements Graph {
         edgeList.set(1, numEdges);
         return true;
     }
+
+    public ArrayList<Integer> getEdgeList() {
+        return edgeList;
+    }
+
+    public int getNumNodes() {
+        return edgeList.get(0);
+    }
+
+    public int getNumEdges() {
+        return edgeList.get(1);
+    }
 }
