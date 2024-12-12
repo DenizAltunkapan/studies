@@ -1,4 +1,4 @@
-package thirdSemester;
+package thirdSemester.closestPair;
 
 public class Point {
     double x, y;

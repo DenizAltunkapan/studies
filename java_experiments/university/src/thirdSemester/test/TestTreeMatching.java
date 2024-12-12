@@ -2,8 +2,8 @@ package thirdSemester.test;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import thirdSemester.TreeMatching;
-import thirdSemester.UndirectedAdjacencyListGraph;
+import thirdSemester.treeMatching.TreeMatching;
+import thirdSemester.treeMatching.UndirectedAdjacencyListGraph;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

@@ -1,8 +1,8 @@
 package thirdSemester.test;
 
 import org.junit.jupiter.api.Test;
-import thirdSemester.ClosestPair;
-import thirdSemester.Point;
+import thirdSemester.closestPair.ClosestPair;
+import thirdSemester.closestPair.Point;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

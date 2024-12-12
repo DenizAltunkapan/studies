@@ -1,4 +1,4 @@
-package thirdSemester;
+package thirdSemester.treeMatching;
 
 /**
  * This class implements the algorithm for calculating the maximum weighted matching in a tree.

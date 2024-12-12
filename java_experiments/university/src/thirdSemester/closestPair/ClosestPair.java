@@ -1,4 +1,5 @@
-package thirdSemester;
+package thirdSemester.closestPair;
+
 import java.util.*;
 
 public class ClosestPair {

@@ -1,4 +1,4 @@
-package thirdSemester;
+package thirdSemester.treeMatching;
 
 import java.util.ArrayList;
 import java.util.HashMap;
