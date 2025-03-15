@@ -3,6 +3,14 @@ package thirdSemester.treeMatching;
 /**
  * This class implements the algorithm for calculating the maximum weighted matching in a tree.
  * The tree is represented as an undirected graph with weighted edges.
+ *
+ * Problem Description:
+ *  Given an undirected tree G = (V, E) with edge weights γ: E → N and a root r ∈ V,
+ *  the goal is to find a maximum weight matching M ⊆ E such that no two edges in M
+ *  share a common vertex. The sum of the weights of the edges in M, ∑ e∈M γ(e), should be maximized.
+ *  For more Information: <a href="https://en.wikipedia.org/wiki/Matching_(graph_theory)">Matching (graph theory)</a>
+ *
+ * @author  <a href="https://github.com/DenizAltunkapan">Deniz Altunkapan</a>
  */
 public class TreeMatching {
 
@@ -48,7 +56,9 @@ public class TreeMatching {
 
         int sumWithoutEdge = 0;
         for (int adjNode : graph.getNeighbors(node)) {
-            if (adjNode == parent) continue;
+            if (adjNode == parent){
+                continue;
+            }
             MaxMatching(adjNode, node);
             sumWithoutEdge += Math.max(dp[adjNode][0], dp[adjNode][1]);
         }
@@ -56,7 +66,9 @@ public class TreeMatching {
         dp[node][0] = sumWithoutEdge;
 
         for (int adjNode : graph.getNeighbors(node)) {
-            if (adjNode == parent) continue;
+            if (adjNode == parent){
+                continue;
+            }
             int weight = graph.getEdgeWeight(node, adjNode);
             dp[node][1] = Math.max(dp[node][1],
                     sumWithoutEdge - Math.max(dp[adjNode][0], dp[adjNode][1]) + dp[adjNode][0] + weight);

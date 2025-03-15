@@ -26,11 +26,13 @@ public class UndirectedAdjacencyListGraph {
      */
     public boolean addEdge(int orig, int dest, int weight) {
         int numNodes = adjacencyList.size();
-        if (orig >= numNodes || dest >= numNodes || orig < 0 || dest < 0)
+        if (orig >= numNodes || dest >= numNodes || orig < 0 || dest < 0) {
             return false;
+        }
 
-        if (adjacencyList.get(orig).containsKey(dest))
+        if (adjacencyList.get(orig).containsKey(dest)) {
             return false;
+        }
 
         adjacencyList.get(orig).put(dest, weight);
         adjacencyList.get(dest).put(orig, weight);
