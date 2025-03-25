@@ -40,7 +40,22 @@ For example, if you define a simple REST API, the Tomcat server will listen on p
 
 == Spring Boot Initializr
 
-The Spring Boot Initializr is the ideal starting point for creating a Spring Boot application. It simplifies the process by allowing you to quickly generate a new project with the necessary setup and dependencies. You can access it #link("start.spring.io")[here]. When creating a project, you can select from various Spring Boot Starters, which are pre-configured sets of dependencies designed for specific functionality, such as web development, data access, or security. The Initializr automatically adds these Starters to your project’s configuration files (like pom.xml for Maven), ensuring all the required libraries are included. This streamlined setup allows developers to focus on building the application rather than managing dependencies, making the Spring Boot Initializr the perfect entry point for any Spring Boot project.
+The Spring Boot Initializr is the ideal starting point for creating a Spring Boot application. It simplifies the process by allowing you to quickly generate a new project with the necessary setup and dependencies. You can access it #link("start.spring.io")[here]. When creating a project, you can select from various * Spring Boot Starters *, which are pre-configured sets of dependencies designed for specific functionality, such as web development, data access, or security. The Initializr automatically adds these Starters to your project’s configuration files (like pom.xml for Maven), ensuring all the required libraries are included. This streamlined setup allows developers to focus on building the application rather than managing dependencies, making the Spring Boot Initializr the perfect entry point for any Spring Boot project. * Popular Spring Boot Starters are: *
+
+=== spring-boot-starter-web
+The spring-boot-starter-web starter provides all necessary dependencies for building web applications and RESTful APIs using Spring MVC. It includes Spring Web, an embedded Tomcat server (or Jetty/Undertow), and Jackson for JSON processing. This starter allows developers to create powerful web applications with minimal configuration. By default, it runs on port 8080, and the embedded server eliminates the need for an external web server installation.
+
+=== spring-boot-starter-data-jpa
+The spring-boot-starter-data-jpa starter includes everything needed to work with relational databases using JPA (Java Persistence API) and Hibernate as the default ORM (Object-Relational Mapping) implementation. It simplifies database interactions by allowing developers to use object-oriented programming principles instead of writing raw SQL. With Spring Data JPA, developers can define repositories that automatically generate database queries based on method names, reducing boilerplate code significantly.
+
+=== spring-boot-devtools
+The spring-boot-devtools starter is a development utility that enhances productivity by enabling features like automatic application restart, live reload, and disabling caching during development. Whenever a code change is detected, Spring Boot automatically restarts the application, allowing developers to see updates in real-time without manually restarting the server. Additionally, it improves debugging by offering better exception messages. However, this starter is only recommended for development environments, as it should not be used in production.
+
+=== spring-boot-starter-security
+The spring-boot-starter-security starter provides authentication and authorization features using Spring Security. By default, it secures all endpoints and requires authentication, even without additional configuration. Developers can implement various authentication mechanisms, such as in-memory authentication, database-based authentication, OAuth2, or JWT (JSON Web Token). It also supports encryption, password hashing, and integration with external identity providers (e.g., Google, Keycloak).
+
+=== spring-boot-starter-validation
+The spring-boot-starter-validation starter enables Bean Validation using Jakarta Validation (formerly Javax Validation). It allows developers to enforce constraints on model attributes using annotations like $@$NotNull, $@$Size, $@$Email, or $@$Pattern, ensuring data integrity before processing requests. This starter is commonly used in combination with Spring MVC for validating request bodies in REST APIs and with Spring Data JPA for validating database entities before persisting them.
 
 = Key Concepts
 == Bean
@@ -109,5 +124,28 @@ REST is implemented in web applications through frameworks and libraries like Sp
 
 Implementing a RESTful web service in Spring Boot is simple. You create a controller class that works with HTTP requests (such as GET, POST, PUT, DELETE) and implements the corresponding methods to access or modify resources. Spring Boot uses the Spring Web library, which enables you to create REST APIs easily.
 
+= Application Properties
 
+== What is application.properties?
+In Spring Boot, application.properties (or application.yml) files are used for configuring your application. These configuration files allow you to define various settings such as server ports, database connections, logging levels, and custom variables. Spring Boot automatically reads these files at runtime and applies the configurations to the application.
+The application.properties file uses a key-value pair format, where each property is defined on a new line. For example:
+```java
+server.port=8080 
+spring.datasource.url=jdbc:mysql://localhost:3306/mydatabase 
+spring.datasource.username=root
+spring.datasource.password=secret
+logging.level.org.springframework=DEBUG
+```
+== Custom Properties
+Define your own properties and access them in your application using the $@$Value annotation or $@$ConfigurationProperties. For example:
+```java
+app.name=My Spring Boot Application
+app.version=1.0.0
+used in:
+@Value("${app.name}")
+private String appName;
+
+@Value("${app.version}")
+private String appVersion;
+```
 
